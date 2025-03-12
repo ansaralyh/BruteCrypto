@@ -412,10 +412,12 @@ nav {
     }
 
     .floating-icons {
+        display: none;
         position: relative;
         width: 100%;
         height: 200px;
         margin-top: 40px;
+        margin-right: 200px;
     }
     
     .dream-question {
