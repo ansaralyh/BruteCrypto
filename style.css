@@ -130,8 +130,8 @@ nav {
 /* Floating icons */
 .floating-icons {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    left: 707px;
+    bottom: 36px;
     height: 400px;
     width: 600px;
     z-index: 1;
@@ -236,7 +236,9 @@ nav {
     padding: 0 20px;
     width: 100%;
 }
-
+.symbol{
+    color:symbol;
+}
 .dream-question {
     color: #B4B2B4;
     font-size: 20px;
@@ -331,6 +333,7 @@ nav {
     text-transform: uppercase;
 }
 
+
 .stats {
     margin-bottom: 15px;
 }
@@ -387,8 +390,9 @@ nav {
     }
 
     .wallet-image {
+        display: none;
         position: relative;
-        right: auto;
+        right: 30%;
         top: auto;
         transform: none;
     }
@@ -668,8 +672,6 @@ nav {
 }
 
 
-
-/* Reviews Section */
 .reviews-section {
     background: black;
     color: white;
@@ -684,20 +686,22 @@ nav {
 }
 
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 619.72px); /* Two fixed-width cards per row */
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Centers the grid */
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .review-card {
     background: #1a1a1a;
-    width: 619.72px; /* Fixed width */
-    height: 288.28px; /* Fixed height */
+    flex: 1 1 500px;
+    max-width: 619.72px;
+    min-height: 288.28px;
     padding: 20px;
     border-radius: 12px;
     text-align: left;
-    /* box-shadow: 0px 0px 10px rgba(161, 0, 255, 0.5); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -706,12 +710,15 @@ nav {
 .review-card h3 {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .review-card p {
     font-size: 1rem;
     line-height: 1.5;
     flex-grow: 1;
+    margin-bottom: 15px;
 }
 
 .review-footer {
@@ -721,97 +728,478 @@ nav {
     opacity: 0.8;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1260px) {
+    .review-card {
+        flex: 1 1 400px;
+    }
+}
 
-
-
-
-        /* FAQ Section */
-        .faq-container {
-            margin-top: 200px;
-            width: 100%;
-            margin: auto;
-            padding: 50px 0;
-            background-color: black;
-            padding-left: 30%;
-            padding-right: 30%;
-        }
-
-        .faq-title {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .faq-item {
-            background-color: #111;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: left;
-            transition: background 0.3s;
-        }
-
-        .faq-item:hover {
-            background-color: #222;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 10px 0;
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        .footer {
-            background: black;
-            color: white;
-            padding: 20px 30px;
-            text-align: center;
-        }
+@media (max-width: 900px) {
+    .reviews-grid {
+        flex-direction: column;
+        align-items: center;
+    }
     
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .review-card {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-heading {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
     
-        .footer-logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
+    .review-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .reviews-section {
+        padding: 40px 15px;
+    }
     
-        .footer-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            padding: 0;
-            margin: 0;
-        }
+    .reviews-heading {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
     
-        .footer-links li {
-            display: inline;
-        }
+    .review-card {
+        padding: 15px;
+        min-height: auto;
+    }
     
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
+    .review-card h3 {
+        font-size: 1rem;
+    }
     
-        .join-telegram {
-            background: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+    .review-card p {
+        font-size: 0.9rem;
+    }
+    
+    .review-footer {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+/* FAQ Section */
+.faq-container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 60px 30px;
+    background-color: black;
+    color: white;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.faq-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq-item {
+    background-color: #111;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.faq-item:hover {
+    background-color: #222;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.faq-toggle {
+    font-size: 22px;
+    font-weight: normal;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 0 5px;
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background: black;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+.join-telegram {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-size: 14px;
+}
+
+.join-telegram:hover {
+    background: white;
+    color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .faq-container {
+        padding: 50px 5%;
+    }
+}
+
+@media (max-width: 992px) {
+    .faq-title {
+        font-size: 28px;
+    }
+    
+    .faq-question {
+        font-size: 16px;
+    }
+    
+    .footer-content {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 40px 20px;
+    }
+    
+    .faq-title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-links {
+        gap: 15px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .faq-container {
+        padding: 30px 15px;
+    }
+    
+    .faq-title {
+        font-size: 24px;
+    }
+    
+    .faq-item {
+        padding: 12px;
+        margin: 10px 0;
+    }
+    
+    .faq-question {
+        font-size: 14px;
+    }
+    
+    .faq-toggle {
+        font-size: 18px;
+    }
+    
+    .faq-answer {
+        font-size: 14px;
+        padding: 10px 0 5px;
+    }
+    
+    .footer {
+        padding: 20px 15px;
+    }
+    
+    .footer-logo {
+        font-size: 1.25rem;
+    }
+    
+    .footer-links {
+        gap: 12px;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+    
+    .join-telegram {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+        
+/* Mobile Navigation */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* Extra Small Screens (Mobile Phones) */
+@media (max-width: 576px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 .symbol {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .dream-question {
+        font-size: 16px;
+    }
+
+    .dream-heading {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .key-symbol {
+        height: 180px;
+    }
+
+    .circle {
+        width: 70px;
+        height: 70px;
+        margin-top: 100px;
+    }
+
+    .circle .symbol {
+        font-size: 30px;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .amount {
+        font-size: 36px;
+    }
+
+    .pricing-heading {
+        font-size: 28px;
+    }
+
+    .pricing-subtitle {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-card {
+        padding: 20px;
+    }
+
+    .price {
+        font-size: 36px;
+    }
+
+    .features-heading {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        gap: 30px;
+    }
+
+    .feature-item img {
+        width: 120px;
+        margin-bottom: 20px;
+    }
+
+    .feature-item p {
+        font-size: 14px;
+    }
+
+    .reviews-heading {
+        font-size: 28px;
+    }
+
+    .faq-title {
+        font-size: 28px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+
+    .footer-logo {
+        font-size: 18px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .join-telegram {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Extra Extra Small Screens (Small Mobile Phones) */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero h1 .symbol {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .dream-heading {
+        font-size: 24px;
+    }
+
+    .key-symbol {
+        height: 160px;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .circle .symbol {
+        font-size: 24px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .amount {
+        font-size: 32px;
+    }
+
+    .pricing-heading {
+        font-size: 24px;
+    }
+
+    .features-heading {
+        font-size: 24px;
+    }
+
+    .reviews-heading {
+        font-size: 24px;
+    }
+}
+
