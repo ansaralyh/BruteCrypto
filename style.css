@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prosto+One&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -85,6 +86,10 @@ nav {
 .hero-content {
     max-width: 650px;
     z-index: 2;
+}
+.hero-content h1{
+    font-weight: bolder;
+    font-size: 70px;
 }
 
 .hero h1 {
@@ -260,6 +265,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20   0px ;
 }
 
 .vertical-line {
@@ -311,6 +317,8 @@ nav {
 }
 
 .wallet-container {
+    
+    margin-top: 100px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -426,10 +434,13 @@ nav {
 
     .dream-heading {
         font-size: 40px;
+        /* margin-bottom: 100px; */
     }
 
     .key-symbol {
+        margin-top: 200px;
         height: 250px;
+        margin-bottom: 200px;
     }
 
     .circle {
