@@ -430,7 +430,7 @@ nav {
         margin-right: 200px;
     }
     .hero-content img{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         width: 20px;
         height: 20px;
     }
